@@ -1,4 +1,3 @@
-
 public class Aula5 {
 	static char[] create(char value, int length) {
 		char[] result = new char[length];
@@ -21,16 +20,20 @@ public class Aula5 {
 	
 	static char[] replaceFirst(char original, char replacement, char[] vector) {
 		for(int i = 0; i < vector.length; i++) {
-			if(vector[i] == original) vector[i] = replacement;
-			return vector;
+			if(vector[i] == original) {
+			  vector[i] = replacement;
+			  return vector;
+			}
 		}
 		return vector;
 	}
 	
 	static char[] replaceLast(char original, char replacement, char[] vector) {
 		for(int i = vector.length - 1; i >= 0; i--) {
-			if(vector[i] == original) vector[i] = replacement;
-			return vector;
+			if(vector[i] == original) {
+			  vector[i] = replacement;
+			  return vector;
+			}
 		}
 		return vector;
 	}
