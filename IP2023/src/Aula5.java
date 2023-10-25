@@ -1,5 +1,5 @@
 
-public class Procedimentos {
+public class Aula5 {
 	static char[] create(char value, int length) {
 		char[] result = new char[length];
 		fill(value, result);
