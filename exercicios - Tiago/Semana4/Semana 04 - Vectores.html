@@ -1,0 +1,155 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<div>
+
+
+<b>Geração de Números Aleatórios</b>
+<p>
+  O Java oferece a classe estática Math, que disponibiliza várias funções para efetuar cálculos. Entre essas funções existe uma para gerar números aleatórios Math.random()), que devolve um número decimal (double) aleatório no intervalo [0.0, 1.0[. Com este valor podemos sortear inteiros da seguinte forma:
+</p>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code>
+  double r = Math.random(); // r estará no intervalo [0.0, 1.0[<br>
+  int i = (int) (r * max);  // i estará no intervalo [0, (max - 1)]
+<br></code></span></code></span></td></tr></table>
+
+<br><br><b>Exercícios:</b>
+<ol>
+
+<li>
+Desenvolva uma classe pacote <span style="color:#606060"><code>IntArrays</code></span> com funções sobre vetores de inteiros.
+<br>
+<br>
+<ol type="a">
+  <b>Trabalho prévio</b><br><br>
+<li>Defina uma função que constroi um vetor com os números naturais até um dado número n.
+<br>
+<i>Exemplo:  naturals(5)&nbsp;&rarr;&nbsp;{1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5}</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static int[] naturals(int n){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Defina uma função que calcula o somatório dos valores de um vetor.
+<br>
+<i>Exemplo:  sum({1,&nbsp;3,&nbsp;5})&nbsp;&rarr;&nbsp;9</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static int sum(int[] v){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li><br>
+<li>Construir um vetor com dígitos aleatórios (números de 0 a 9), dado o comprimento.
+<br>
+<i>Exemplo:  randomDigits(5)&nbsp;&rarr;&nbsp;{2, 1, 4, 9, 2}</i>
+<br>
+</li><br>
+<hr>
+<b>Aula prática</b><br><br>
+<li>Defina uma função que calcula a média dos valores de um vetor.
+<br>
+<i>Exemplo:  mean({13,&nbsp;14,&nbsp;16,&nbsp;15})&nbsp;&rarr;&nbsp;14.5</i>
+<br>
+</li>
+<br>
+<li>Defina uma função que copia (replica) um vetor de inteiros, tendo o novo vetor um tamanho dado como argumento.
+<br>
+<i>Exemplo:  copy({1,&nbsp;2,&nbsp;3},&nbsp;6)&nbsp;&rarr;&nbsp;{1,&nbsp;2,&nbsp;3,&nbsp;0,&nbsp;0,&nbsp;0}</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static int[] copy(int[] v, int length){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Defina uma função que copia (replica) um vetor de inteiros, tendo o novo vetor o mesmo tamanho que o original.
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static int[] copy(int[] v){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Defina uma função para verificar se existe determinado número n num vetor.
+<br>
+<i>Exemplo:  exists(5,&nbsp;{1,&nbsp;5,&nbsp;2})&nbsp;&rarr;&nbsp;true</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static boolean exists(int n, int[] v){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Defina uma função que devolva o número de ocorrências de um determinado número num vetor.
+<br>
+<i>Exemplo:  count(3,&nbsp;{1,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;3})&nbsp;&rarr;&nbsp;2</i>
+<br>
+</li>
+<br>
+<li>Defina uma função que devolva o valor máximo de um vetor.
+<br>
+<i>Exemplo:  max({5,&nbsp;1,&nbsp;6,&nbsp;9,&nbsp;3})&nbsp;&rarr;&nbsp;9</i>
+<br>
+</li>
+<br>
+<li>Defina uma função para construir um sub-vetor de outro vetor, dados o índice do primeiro elemento e o índice do último elemento a incluir.
+<br>
+<i>Exemplo:  subArray(2,&nbsp;4,&nbsp;{3,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;9})&nbsp;&rarr;&nbsp;{6,&nbsp;7,&nbsp;8}</i>
+<br>
+</li>
+<br>
+<li>Defina uma função que permita obter a primeira metade de um vetor v, incluindo opcionalmente o elemento do meio (caso o comprimento do vetor seja ímpar).
+<br>
+<i>Exemplo:  firstHalf({1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5},&nbsp;true)&nbsp;&rarr;&nbsp;{1,&nbsp;2,&nbsp;3}</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static int[] firstHalf(int[] v, boolean includeMiddle){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Analogamente à alínea anterior, defina uma função que permita obter a segunda metade de um vetor.
+<br>
+</li>
+<br>
+<li>Defina uma função para construir um vetor juntando outros dois vetores (parte esquerda e direita).
+<br>
+<i>Exemplo:  merge({1,&nbsp;2},&nbsp;{9,&nbsp;10})&nbsp;&rarr;&nbsp;{1,&nbsp;2,&nbsp;9,&nbsp;10}</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static int[] merge(int[] left, int[] right){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Defina uma função que construa um vetor invertido com base noutro vetor. Ou seja, o novo vetor será composto pelos elementos do vetor dado pela ordem inversa.
+<br>
+<i>Exemplo:  invert({1,&nbsp;2,&nbsp;3})&nbsp;&rarr;&nbsp;{3,&nbsp;2,&nbsp;1}</i>
+<br>
+</li><br>
+<li>Sortear um número de um vetor, com igual probabilidade para todos os elementos. A solução passa por sortear um índice válido do vetor.
+<br>
+<i>Exemplo:  random({7,&nbsp;2,&nbsp;5,&nbsp;4})&nbsp;&rarr;&nbsp;7, 2, 5, ou 4</i>
+<br>
+</li>
+<hr>
+<b>Exercícios extra</b><br><br>
+
+<li>Defina uma função que construa um vetor com base noutro, de modo a ter o dobro do tamanho e cada elemento duplicado.
+<br>
+<i>Exemplo:  duplicateEveryElement({1,&nbsp;2,&nbsp;3})&nbsp;&rarr;&nbsp;{1,&nbsp;1,&nbsp;2,&nbsp;2,&nbsp;3,&nbsp;3}</i>
+<br>
+</li>
+<br>
+<li>Defina uma função que construa um vetor com base noutro, sendo a primeira metade uma cópia e a segunda metade os mesmos elementos pela ordem inversa.
+<br>
+<i>Exemplo:  duplicateInverted({3,&nbsp;2,&nbsp;1})&nbsp;&rarr;&nbsp;{3,&nbsp;2,&nbsp;1,&nbsp;1,&nbsp;2,&nbsp;3}</i>
+<br>
+</li>
+<br>
+<li>Defina uma função que construa um vetor com base noutro, representando uma cópia sem o elemento do meio (caso o tamanho seja ímpar).
+<br>
+<i>Exemplo:  copyWithoutMiddleElement({1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5})&nbsp;&rarr;&nbsp;{1,&nbsp;2,&nbsp;4,&nbsp;5}</i>
+<br>
+</li><br>
+<li>Construir um vetor com n números da sequência de Fibonacci.
+<br>
+<i>Exemplo:  fibonacciSequence(7)&nbsp;&rarr;&nbsp;{0, 1, 1, 2, 3, 5, 8}</i>
+<br>
+</li>
+<br>
+</ol>
+</li>
+</ol>
+</div>
+</html>

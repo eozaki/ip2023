@@ -1,0 +1,160 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<div>
+<p>
+A principal novidade neste conjunto de exercícios é a noção de procedimento. Um procedimento recebe referências para, por agora, vetores, os quais pode manipular, ao contrário das funções que produzem um resultado que não altera os argumentos. Tal como com as funções, para testar um procedimento que tem vetores como parâmetros, pode ser criado um procedimento de teste sem parâmetros onde é definido um vetor que será o argumento a ser passado ao procedimento que se pretende testar. Por exemplo, para testar o procedimento swap() pedido no exercício B desta aula, podemos definir um procedimento de teste como se pode ver abaixo.
+</p>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code>
+static void swap(int i, int j, char[] v) {
+    ...
+}<br><br>
+static void testSwap() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char[] v = {'a', 'c', 'e', 'g', 'i'};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;swap(2, 3, v);<br>
+}<br>
+</code></span></code></span></td></tr></table><br>
+
+O PandionJ permite visualizar vetores de carateres como uma string.
+Para tal basta colocar o comentário <b>// @string</b> junto da variável que se pretende visualizar dessa forma.<br><br>
+
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code>
+char[] alph = {'a','b','c','d'}; //@string
+</code></span></code></span></td></tr></table><br>
+
+<br><br><b>Exercícios:</b>
+<ol>
+<li>
+Desenvolva uma classe pacote <span style="color:#606060"><code>CharArrays</code></span> contendo funções/procedimentos sobre vetores de carateres, de modo a permitir:
+<br>
+<br>
+<ol type="a">
+<b>Trabalho prévio</b><br><br>
+<li>Criar um vetor com determinado caráter, de comprimento n.
+<br>
+<i>Exemplo:  create('c',&nbsp;3})&nbsp;&rarr;&nbsp;{'c','c','c'}</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static char[] create(char c, int n){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Preencher todo o vetor com determinado caráter.
+<br>
+<i>Exemplo:  fill('c',&nbsp;{'&nbsp;',&nbsp;'h',&nbsp;'r'})&nbsp;&rarr;&nbsp;{'c','c','c'}</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static void fill(char c, char[] v){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Substituir todas as ocorrências de determinado caráter por outro.
+<br>
+<i>Exemplo:  replace('a','b',{'a','c','a'})&nbsp;&rarr;&nbsp;{'b','c','b'}</i>
+<br>
+</li>
+<hr>
+<b>Aula prática</b><br>
+<br>
+<li>Substituir a primeira ocorrência de determinado caráter por outro.
+<br>
+</li>
+<br>
+<li>Substituir a última ocorrência de determinado caráter por outro.
+<br>
+</li>
+<br>
+<li>Rodar os seus elementos para a esquerda (o primeiro elemento passa a ser o último).
+<br>
+<i>Exemplo:  shiftLeft({'a','b','c','d'})&nbsp;&rarr;&nbsp;{'b','c','d','a'}</i>
+<br>
+</li>
+<br>
+<li>Rodar os seus elementos para a direita (o último elemento passa a ser o primeiro).
+<br>
+<i>Exemplo:  shiftRight({'a','b','c','d'})&nbsp;&rarr;&nbsp;{'d','a','b','c'}</i>
+<br>
+</li>
+<br>
+<li>Trocar os valores de duas posições do vetor.
+<br>
+<i>Exemplo:  swap(1,&nbsp;3,&nbsp;{'a','b','c','d'})&nbsp;&rarr;&nbsp;{'a','d','c','b'}</i>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static void swap(int i, int j, char[] v){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Inverter a ordem dos seus elementos.
+<br>
+<i>Exemplo:  invert({'a','b','c'})&nbsp;&rarr;&nbsp;{'c','b','a'}</i>
+<br>
+</li>
+<br>
+<li>Copiar um vetor de carateres.
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static char[] copy(char[] array){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Dado um vetor de caráter, e dois índices (primeiro e último), obter um novo vetor que é um sub-vetor do vetor dado.
+<br>
+<i>Exemplo: subarray({'a','b','c','d','e'},&nbsp;1,&nbsp;3)&nbsp;&rarr;&nbsp;{'b','c','d'}</i>
+<br>
+</li>
+<br>
+<li>Desenvolva uma função auxiliar para obter um número inteiro aleatório entre zero e um dado número máximo (inclusive).
+<br>
+<i>Exemplo:  randomIndex(5)&nbsp;devolve&nbsp;aleatoriamente&nbsp;um&nbsp;número&nbsp;compreendido&nbsp;no&nbsp;intervalo&nbsp;[0,&nbsp;5].</i>
+<br>
+<a href="http://download.oracle.com/javase/1.4.2/docs/api/java/lang/Math.html" target="_blank">java.lang.Math</a>
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static int randomIndex(int max){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<br>
+<li>Substituir o valor de uma posição aleatória do vetor por um dado caráter c.
+<br>
+</li>
+<br>
+<li>Baralhar os elementos de um vetor de carateres, aplicando o algoritmo de Fisher-Yates.
+<br>
+<a href="http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle" target="_blank">Algoritmo de Fisher-Yates</a>
+<br>
+</li>
+<br>
+<li>Ordenar os carateres por ordem crescente.
+<br>
+<a href="https://en.wikipedia.org/wiki/Bubble_sort" target="_blank">Bubble sort</a>
+<br>
+</li>
+<hr>
+<b>Exercícios extra</b><br><br>
+Defina duas funções que permitam:
+<li>Acrescentar um caráter ao final de um vetor de caráter, obtendo um vetor novo.
+<br>
+<i>Exemplo: concat({'a','b','c'},&nbsp;'d')&nbsp;&rarr;&nbsp;{'a','b','c','d'}</i>
+<br>
+</li>
+<br>
+<li>Concatenar dois vetores de caráter (parte esquerda e direita), obtendo um vetor novo.
+<br>
+<table border="0" cellpadding="5" bgcolor="#E8E8E8"><tr><td><span style="color:#606060"><code><span style="color:#606060"><code> static char[] concat(char[] left, char[] right){<br>&nbsp;&nbsp;&nbsp;&nbsp;//...<br>}<br></code></span></code></span></td></tr></table>
+<br>
+</li>
+<li>Defina um procedimento que substitui o valor de uma posição aleatória do vetor por um dado caráter c.
+<br>
+<i>Exemplo: replaceRandom('z', {'a','b','c'})&nbsp;&rarr;&nbsp;{'a','z','c'}</i>
+<br>
+</li><br>
+<li>Defina um procedimento que “troca as metades” de um vetor de carateres.
+<br>
+<i>Exemplo: swapHalves({'a','b','c','d'})&nbsp;&rarr;&nbsp;{'c','d','a','b'}</i>
+<br>
+</li>
+<br>
+</ol>
+</li>
+</ol>
+</div>
+
+
+</html>
