@@ -23,5 +23,48 @@ public class Aula8 {
     ColorImage img = new ColorImage(200, 150);
     img.drawText(30, 50, "And the answer is ..", 20, new Color(255, 255, 255));
     img.drawCenteredText(100, 100, s4, 20, new Color(255, 255, 255));
+
+    /*************************************
+     *** EXERCICIOS FEITOS EM AULA - 8 ***
+     *************************************/
+
+    // Exercicio 1
+    Color red = Color.RED;
+
+    // Exercicio 2
+    Color inverseRed = red.inverse();
+
+    // Exercicio 3
+    Color pink = red.brighter(128);
+
+    // Exercicio 4
+    Color greyScale = red.greyScale();
+    Color lighterGreyScale = pink.greyScale();
+
+    // Exercicio 5
+    boolean a = greyScale.isEqualTo(red);
+    boolean b = greyScale.isEqualTo(red.greyScale());
+    boolean d = red.isEqualTo(inverseRed.inverse());
+
+    // Exercicio 6
+    Color[] v = { Color.RED, new Color(220, 220, 220), Color.BLUE };
+    boolean isInVetor = red.containedIn(v); // true
+    boolean notInVetor = Color.GREEN.containedIn(v); // false
+
+    // Exercicio 1 - ColorImage
+    ColorImage coffee = new ColorImage("coffee.jpg");
+    ColorImage oneMore = coffee.copy();
+
+    // Exercicio 2 - ColorImage
+    ColorImage darkCoffee = coffee.inverse();
+
+    // Exercicio 3 - ColorImage
+    ColorImage greyCoffee = coffee.greyScale();
+
+    // Exercicio 4 - ColorImage
+    ColorImage brighterCoffee = coffee.brighter(128);
+
+    // Exercicio 5 - Colorimage
+    ColorImage mirroredCoffee = coffee.mirror();
   }
 }
