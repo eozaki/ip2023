@@ -39,7 +39,8 @@ class ColorImage {
 		}
 	}
 	
-//	a)	Obter uma cópia da imagem.
+//	alínea 1-a)	
+//		Obter uma cópia da imagem.
 	
 	ColorImage(ColorImage copy)
 	{
@@ -107,7 +108,7 @@ class ColorImage {
 		}
 	}
 	
-//	b)
+//	alínea 1-b)
 	
 	void invertColors()
 	{
@@ -122,7 +123,7 @@ class ColorImage {
 		}
 	}
 	
-//	c)
+//	alínea 1-c)
 	
 	void greyscale()
 	{
@@ -137,7 +138,7 @@ class ColorImage {
 		}
 	}
 	
-//	d)
+//	alínea 1-d)
 	
 	void changeBrightness(int value)
 	{
@@ -152,7 +153,7 @@ class ColorImage {
 		}
 	}
 	
-//	e)
+//	alinea 1-e)
 	
 	void invertHorizontal()
 	{
@@ -170,6 +171,8 @@ class ColorImage {
 			}
 		}
 	}
+	
+//	3)
 	
 	void paste(ColorImage img, int x, int y)
 	{
@@ -194,5 +197,26 @@ class ColorImage {
 				this.setColor(copyX + x, copyY + y, Pixel);
 			}
 		}
+	}
+	
+	/*	
+	 *		EXTRAS 
+	 */
+
+//	1)	
+	
+	ColorImage selection(int startx, int starty, int endx, int endy)
+	{
+		ColorImage selectionImage = new ColorImage(endx-startx, endy-starty);
+		
+		for(int i = 0; i < selectionImage.data.length; i++)
+		{
+			for(int j = 0; j < selectionImage.data[i].length; j++)
+			{
+				selectionImage.data[i][j] = this.data[starty + i][startx + j];
+			}
+		}
+		
+		return selectionImage;
 	}
 }
