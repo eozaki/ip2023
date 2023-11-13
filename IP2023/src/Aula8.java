@@ -64,7 +64,18 @@ public class Aula8 {
     // Exercicio 4 - ColorImage
     ColorImage brighterCoffee = coffee.brighter(128);
 
-    // Exercicio 5 - Colorimage
+    // Exercicio 5 - ColorImage
     ColorImage mirroredCoffee = coffee.mirror();
+
+    // Exercicio 6 - ColorImage
+    ColorImage halfCoffee = ColorImage.darkCoffee(mirroredCoffee);
+
+    // Exercicio 7 - ColorImage
+//    ColorImage newCoffee = new ColorImage("coffee.jpg");
+//    newCoffee.paste(mirroredCoffee, 100, 50);
+
+    // Exercicio 8
+    ColorImage megazord = ColorImage.megazord(coffee);
+    ColorImage megazord2 = ColorImage.megazord(coffee);
   }
 }
