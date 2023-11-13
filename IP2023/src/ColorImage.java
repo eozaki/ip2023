@@ -153,4 +153,42 @@ class ColorImage {
 
     return newImage;
   }
+
+  // Exercicio 6
+  static ColorImage darkCoffee(ColorImage sourceImg) {
+    ColorImage newImg = new ColorImage(sourceImg.getWidth(), sourceImg.getHeight());
+
+    for (int i = 0; i < newImg.getHeight(); i++) {
+      for (int j = 0; j < (newImg.getWidth() / 2) + 1; j++) {
+        Color color = sourceImg.getColor(j, i).inverse().greyScale();
+        newImg.setColor(j, i, color);
+        newImg.setColor(newImg.getWidth() - j - 1, i, color);
+      }
+    }
+
+    return newImg;
+  }
+
+  // Exercicio 7
+  void paste(ColorImage img, int x, int y) {
+    for (int i = 0; x + i < Math.min(x + img.getHeight(), this.getHeight()); i++) {
+      for (int j = 0; y + j < Math.min(y + img.getWidth(), this.getWidth()); j++) {
+        Color color = img.getColor(j, i);
+
+        this.setColor(y + j, x + i, color);
+      }
+    }
+  }
+
+  // Exercicio 8
+  static ColorImage megazord(ColorImage src) {
+    ColorImage megazord = new ColorImage(src.getWidth() * 2, src.getHeight() * 2);
+
+    megazord.paste(src.greyScale().mirror(), 0, 0);
+    megazord.paste(src, 0, src.getWidth());
+    megazord.paste(src.inverse().mirror(), src.getHeight(), 0);
+    megazord.paste(src.greyScale(), src.getHeight(), src.getWidth());
+
+    return megazord;
+  }
 }
