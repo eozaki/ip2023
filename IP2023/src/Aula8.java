@@ -52,7 +52,7 @@ public class Aula8 {
     boolean notInVetor = Color.GREEN.containedIn(v); // false
 
     // Exercicio 1 - ColorImage
-    ColorImage coffee = new ColorImage("coffee.jpg");
+    ColorImage coffee = new ColorImage("IpirangaSaoJoaoEdsonLopesJrSecom.jpeg");
     ColorImage oneMore = coffee.copy();
 
     // Exercicio 2 - ColorImage
@@ -77,5 +77,8 @@ public class Aula8 {
     // Exercicio 8
     ColorImage megazord = ColorImage.megazord(coffee);
     ColorImage megazord2 = ColorImage.megazord(coffee);
+
+    ColorImage poster = coffee.posterize();
+    poster.save();
   }
 }

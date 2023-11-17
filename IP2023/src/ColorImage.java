@@ -1,3 +1,4 @@
+import java.awt.image.BufferedImage;
 
 /**
  * Represents color images. Image data is represented as a matrix: - the number
@@ -35,6 +36,36 @@ class ColorImage {
   }
 
   // Metods
+
+  ColorImage posterize() {
+    ColorImage newImg = new ColorImage(this.getWidth(), this.getHeight());
+    Color b = new Color(51, 50, 110);
+
+    for (int i = 0; i < this.getWidth(); i++)
+      for (int j = 0; j < this.getHeight(); j++) {
+        Color color = this.getColor(i, j).getLuminance() > 128 ? b : Color.WHITE;
+        newImg.setColor(i, j, color);
+      }
+
+    return newImg;
+  }
+
+  void save() {
+    BufferedImage img = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_RGB);
+    String name = "poster.png";
+
+    System.out.println(this.getHeight());
+    System.out.println(this.getWidth());
+    for (int i = 0; i < this.getHeight(); i++)
+      for (int j = 0; j < this.getWidth(); j++) {
+        Color color = this.getColor(j, i);
+
+        int col = (color.getR() << 16) | (color.getG() << 8) | color.getB();
+        img.setRGB(j, i, col);
+      }
+
+    ImageUtil.saveBinaryImage(img, name);
+  }
 
   int getWidth() {
     return data[0].length;
