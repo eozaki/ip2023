@@ -32,4 +32,13 @@ class Fraction {
   public boolean lessThan(Fraction other) {
     return this.realNumber() < other.realNumber();
   }
+
+  public boolean greaterThan(Fraction other) {
+    return this.realNumber() > other.realNumber();
+  }
+
+  public boolean equalsTo(Fraction other) {
+    return this.realNumber() == other.realNumber();
+  }
+
 }
